@@ -1,0 +1,98 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import './mixin.scss';
+@import './variables.scss';
+
+*{
+    box-sizing: border-box;
+}
+.logo{
+    max-width:size(70);
+    width:100%;
+}
+.flex-stretch{
+    flex:1;
+}
+header{
+    box-shadow: 0 size(5) size(5) $color-shadow;
+    padding:0 size(20);
+}
+.navigation-container{
+    min-width:size(60);
+}
+.navigation-bar {
+    background: $color-secondary;
+    bottom: 0;
+    position: fixed;
+    height: 100%;
+
+    .side-nav {
+        .nav-icon{
+            padding:size(20);
+            display: block;
+            i{
+                color:$color-white;
+                font-size:18px;
+            }
+            &.active{
+                background-color:$color-primary;
+            }
+        }
+    }
+}
+
+
+.nav-tabs{
+    .nav-link{
+        background-color:$color-secondary;
+        color:$color-white;
+        &.active{
+            background-color:$color-primary;
+            color:$color-white;
+        }
+    }
+}
+
+div[class*=_TableHead]{
+    background-color:$color-primary;
+    div[class*=_TableCol]{
+        color:$color-white;
+        font-size:size(16);
+    }
+}
+div[class*=_TableBody]{
+    div[class*=_TableRow]{
+        &:nth-child(odd){
+            background-color:$color-light-gray;
+        }
+    }
+}
+.profile-form{
+    margin:size(20) 0;
+    div[class*=col-]{
+        padding:0 size(15);
+    }
+    .form-group{
+        label{
+            font-size:size(14);
+            font-weight:bold;
+        }
+        input, select{
+            border:none;
+            border-radius: 0;
+            border-bottom:size(2) solid $color-secondary;
+            &:focus{
+                border-bottom:size(2) solid $color-primary;
+                box-shadow:none;
+            }
+        }
+        .form-check-input{
+            position: static;
+            margin:0;
+        }
+    }
+}
+.update-response{
+    p{
+        font-weight: bold;
+    }
+}
