@@ -17,6 +17,13 @@ const UserProfile = ({ selectedUser, handleUserProfile, handleCheck, relocateOpt
                 message: 'Action failed'
             }));
     }
+    
+    const isValidNumber = (e) => {
+        if(e.target.value.length !== 10){
+            alert('Please enter a valid mobile number')
+        }
+    }
+    
     return (
         <>
             <Form onSubmit={handleSubmit} className="profile-form">
@@ -68,6 +75,7 @@ const UserProfile = ({ selectedUser, handleUserProfile, handleCheck, relocateOpt
                                 placeholder="Mobile number"
                                 value={number || ''}
                                 onChange={handleUserProfile}
+                                onBlur={isValidNumber}
                             />
                         </FormGroup>
                     </Col>
